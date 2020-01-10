@@ -1,0 +1,12 @@
+h3 {
+  color: #ff00ff;
+  font-size: 20px;
+  background-color: #333333; }
+
+/* Use the variables */
+h1 {
+  color: #00ff00;
+  font-size: 20px;
+  background-color: #333; }
+
+/*# sourceMappingURL=styles/index.css.map */
