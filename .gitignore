@@ -7,3 +7,4 @@ yarn.lock
 public/index.js
 public/index.js.map
 public/styles
+dist
