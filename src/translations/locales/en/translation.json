@@ -1,4 +1,11 @@
 {
     "LOGIN": "Username",
-    "SIGN_UP": "Sign up"
+    "SIGN_UP": "Sign up",
+    "MENU_TITLE": {
+        "HOME": "HOME",
+        "SSL": "SSL",
+        "AUTH_INTERNAL": "Authentication: Active Directory",
+        "AUTH_AD": "Authentication: Internal",
+        "NAS_MOUNT": "NAS Mount"
+    }
 }

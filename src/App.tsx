@@ -1,36 +1,26 @@
-import React, { Suspense } from 'react';
-import { useTranslation } from 'react-i18next';
-import { TestComponent } from './components/TestComponent';
+import * as React from 'react';
+// import { useTranslation } from 'react-i18next';
+import { BrowserRouter as Router } from 'react-router-dom';
+// import { TestComponent } from './components/TestComponent';
+import Layout from './pages/layout';
 // import { action } from './store/feature1/actions';
 import './styles/file.scss';
 import './styles/index.scss';
 // import { sum } from './test';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const changeLanguage = (i18n: any , lng: string ) => {
-    i18n.changeLanguage(lng);
-};
+// const changeLanguage = (i18n: any, lng: string) => {
+//     i18n.changeLanguage(lng);
+// };
 
-export default function App(): JSX.Element {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function App(): any {
     // tslint:disable-next-line: no-console
-    const { t, i18n } = useTranslation();
+    // const { t, i18n } = useTranslation();
     // console.log(`${sum(1, 2)}`);
     return (
-        <Suspense fallback={<Loading />}>
-        <React.Fragment>
-            <TestComponent />
-            {/* {action()} */}
-            <h3 className="h1">Scaffold Rollup + TypeScript + React</h3>
-            <h4>This is the translated string {t('LOGIN')}</h4>
-            <button onClick={() => changeLanguage(i18n, 'fr')}>fr</button>
-          <button onClick={() => changeLanguage( i18n, 'en')}>en</button>
-        </React.Fragment>
-        </Suspense>
-    );
-}
-
-export function Loading(): JSX.Element {
-    return (
-        <div>Loading</div>
+        <Router>
+            <Layout />
+        </Router>
     );
 }

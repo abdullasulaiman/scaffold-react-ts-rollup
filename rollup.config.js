@@ -11,9 +11,8 @@ import { eslint } from 'rollup-plugin-eslint';
 import { terser } from 'rollup-plugin-terser';
 import { uglify } from 'rollup-plugin-uglify';
 import copy from 'rollup-plugin-copy'
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const path = require('path');
-import tslint from "rollup-plugin-tslint";
+import path from 'path';
+// import tslint from "rollup-plugin-tslint";
 
 /** This is done to resolve the following error while building react with rollup
     createElement is not exported by node_modules/react/index.js
@@ -23,6 +22,7 @@ import * as reactDom from 'react-dom';
 import * as reactIs from 'react-is';
 import * as propTypes from 'prop-types';
 
+// eslint-disable-next-line no-undef
 const isProd = process.env.NODE_ENV === 'production';
 const extensions = ['.js', '.ts', '.tsx'];
 
@@ -32,6 +32,7 @@ const override = { compilerOptions: { declaration: false } };
 const customResolver = resolve({
     extensions: ['.ts', '.ts', '.html', '.css', '.sass', '.scss'],
 });
+// eslint-disable-next-line no-undef
 const projectRootDir = path.resolve(__dirname);
 
 export default {
@@ -56,13 +57,15 @@ export default {
             ],
             customResolver,
         }),
-        tslint({
-            exclude: [
-                'node_modules/**',
-                'src/styles/**',
-                'src/assets/**',
-            ]
-        }),
+        // tslint({
+        //     exclude: [
+        //         'node_modules/**',
+        //         'src/styles/**',
+        //         'src/assets/**',
+        //     ]
+        // }),
+        eslint(),
+        /** Configuring typescript. The default config is loaded from tsconfig.json */
         typescript({
             tsconfigDefaults: defaults,
             tsconfig: 'tsconfig.json',
@@ -75,8 +78,12 @@ export default {
         resolve({
             extensions,
         }),
+        /** Configuring postcss in the project
+         *  file extensions handled are css, saas and scss
+         */
         postcss({
             preprocessor: (content, id) =>
+                // eslint-disable-next-line no-undef
                 new Promise((resolve, _) => {
                     const result = sass.renderSync({ file: id });
                     resolve({ code: result.css.toString() });
@@ -128,10 +135,12 @@ export default {
                 ],
             ],
         }),
+        /** Copy folder from source to build folders
+         *  Images, assets and locales are copied from source to dist folder
+         * */
         copy({
             targets: [
               { src: 'src/public/*', dest: 'dist/public' },
-              { src: 'src/translations/locales/*', dest: 'dist/public/locales/' },
               { src: ['assets/fonts/*', 'assets/fonts/*'], dest: 'dist/public/fonts' },
               { src: 'assets/images/**/*', dest: 'dist/public/images' }
             ]
