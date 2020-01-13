@@ -30,17 +30,17 @@ $ 'npm build'
 $ 'npm storybook'
 
 ```
-Directory structure as follows
-    src
-        assets \
-        components \
-        pages \
-        public \
-        store \
-        styles \
-        tests \
-        translations \
-        utils \
+**Directory structure as follows** <br>
+    src <br>
+        assets <br>
+        components <br>
+        pages <br>
+        public <br>
+        store <br>
+        styles <br>
+        tests <br>
+        translations <br>
+        utils <br>
 
     App.tsx <br>
     i18n.ts <br>
@@ -48,37 +48,36 @@ Directory structure as follows
 
 src is a root folder where all the source files resides <br>
 
-### assets
-    All the assets files like images <br>
+### **assets**
+    All the assets files like images can be placed here<br>
 
-### components
-    All the base components / dumb components should be residing here. These components will be used across the projects. <br>
-    These components should not contain any store code and application logic. These can be called as ATOMS <br>
+### **components**
+    All the base / dumb components should be residing here. These components will be used across the projects. <br>
+    Components should not contain any store code and application logic. These can be called as ATOMS <br>
 
-### pages
+### **pages**
     Screen / Layout components will be created in this folder. These can contain pages as a feature or a layout 
     which contains specific layout associated the screens. These can be also used as a based screen / layout for a feature <br>
-    or for a route.
+    or for a route. This can be called as ORGANISMS
 
-### public 
+### **public** 
     This folder will hold all the statics files which will be used for running the app.<br>
     e.g.: environment based template html's e.g. dev.html & prod.html. <br>
 
-### store {we can suggest a better name for this folder}
+### **store** {we can suggest a better name for this folder}
     We have all the feature associated with the application created here. They can have a sub-folder with feature name <br>
         e.g. : a dummy folder home and ssl is created which has the following <br>
             components <br>
                 Dumb / Base components for this feature which is specific to the feature should be part of this directory. <br>
                 This can be discussed is this required or not? As we have a components folder as part of the top <br>
-                level directory structure will be used across the applications <br>
+                level directory structure will be used across the applications <br>.
             containers <br>
                 Components which are connected to the store / Smart components which is part of this feature should be part <br>
-                of this directory. <br>
+                of this directory. This can be called as MOLECULES<br>
             actions.ts <br>
                 All the actions related to this feature will be available here. <br>
             reducers <br>
-                A folder created if there multiple reducers in the future to be broken down. This will  <br>
-                hold all the reducers associated with the feature. <br>
+                A folder created if there multiple reducers in the future to be broken down. This will hold all the reducers associated with the feature. <br>
             types.ts <br>
                 All the types / constants for the feature will be created on this. <br>
 
@@ -86,14 +85,13 @@ src is a root folder where all the source files resides <br>
         This can hold a common actions / reducers and types which can be used by any feature. The directory structure can <br>
         remain the same. <br>
 
-### styles <br>
-    This is still debatable. Do you still want to have this structure where styles are separate or should be part of <br> 
-   component / container components folder ? We can discuss this <br>
+### **styles** <br>
+    This is still debatable. Do you still want to have this structure where styles are separate or should be part of component / container components folder ? We can discuss this <br>
 
-### tests <br>
+### **tests** <br>
     Same can be said for the tests folder as well. We can take it up in the next meeting <br>
 
-### translations <br>
+### **translations** <br>
     This folder contains all the translations associated with the application. <br>
     The structure should be as follows <br>
         locales <br>
@@ -105,7 +103,7 @@ src is a root folder where all the source files resides <br>
     // Points to be discussed <br>
     The translation has been defined in the PO files. Some questions regarding this are <br>
         1) We should completely move out of PO files and create translations from scratch? Cost involved ? Right approach? <br>
-        2) We should stick to the current process of creating a PO file and should have intermediate process to convert them to <br>
+        2) We should stick to the current process of creating a PO file and should have intermediate process to convert them to
            translation.json which will be consumed by the i18next ? <br>
 
     We will be trimming / removing translation keys which are not be used as part of the final build. <br>
