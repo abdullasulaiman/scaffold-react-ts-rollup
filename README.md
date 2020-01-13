@@ -32,95 +32,96 @@ $ 'npm storybook'
 ```
 Directory structure as follows
     src
-        assets
-        components
-        pages
-        public
-        store
-        styles
-        tests
-        translations
-        utils
-    App.tsx
-    i18n.ts
-    index.ts
+        assets \
+        components \
+        pages \
+        public \
+        store \
+        styles \
+        tests \
+        translations \
+        utils \
 
-src is a root folder where all the source files resides
+    App.tsx <br>
+    i18n.ts <br>
+    index.ts <br>
+
+src is a root folder where all the source files resides <br>
 
 ### assets
-    All the assets files like images
+    All the assets files like images <br>
 
 ### components
-    All the base components / dumb components should be residing here. These components will be used across the projects. 
-    These components should not contain any store code and application logic. These can be called as ATOMS
+    All the base components / dumb components should be residing here. These components will be used across the projects. <br>
+    These components should not contain any store code and application logic. These can be called as ATOMS <br>
 
 ### pages
     Screen / Layout components will be created in this folder. These can contain pages as a feature or a layout 
-    which contains specific layout associated the screens. These can be also used as a based screen / layout for a feature
+    which contains specific layout associated the screens. These can be also used as a based screen / layout for a feature <br>
     or for a route.
 
 ### public 
-    This folder will hold all the statics files which will be used for running the app.
-    e.g.: environment based template html's e.g. dev.html & prod.html.
+    This folder will hold all the statics files which will be used for running the app.<br>
+    e.g.: environment based template html's e.g. dev.html & prod.html. <br>
 
 ### store {we can suggest a better name for this folder}
-    We have all the feature associated with the application created here. They can have a sub-folder with feature name
-        e.g. : a dummy folder home and ssl is created which has the following
-            components 
-                Dumb / Base components for this feature which is specific to the feature should be part of this directory.
-                This can be discussed is this required or not? As we have a components folder as part of the top
-                level directory structure will be used across the applications
-            containers
-                Components which are connected to the store / Smart components which is part of this feature should be part
-                of this directory.
-            actions.ts
-                All the actions related to this feature will be available here.
-            reducers 
-                A folder created if there multiple reducers in the future to be broken down. This will 
-                hold all the reducers associated with the feature.
-            types.ts
-                All the types / constants for the feature will be created on this.
+    We have all the feature associated with the application created here. They can have a sub-folder with feature name <br>
+        e.g. : a dummy folder home and ssl is created which has the following <br>
+            components <br>
+                Dumb / Base components for this feature which is specific to the feature should be part of this directory. <br>
+                This can be discussed is this required or not? As we have a components folder as part of the top <br>
+                level directory structure will be used across the applications <br>
+            containers <br>
+                Components which are connected to the store / Smart components which is part of this feature should be part <br>
+                of this directory. <br>
+            actions.ts <br>
+                All the actions related to this feature will be available here. <br>
+            reducers <br>
+                A folder created if there multiple reducers in the future to be broken down. This will  <br>
+                hold all the reducers associated with the feature. <br>
+            types.ts <br>
+                All the types / constants for the feature will be created on this. <br>
 
-    common 
-        This can hold a common actions / reducers and types which can be used by any feature. The directory structure can
-        remain the same.
+    common <br>
+        This can hold a common actions / reducers and types which can be used by any feature. The directory structure can <br>
+        remain the same. <br>
 
-### styles
-    This is still debatable. Do you still want to have this structure where styles are separate or should be part of 
-   component / container components folder ? We can discuss this
+### styles <br>
+    This is still debatable. Do you still want to have this structure where styles are separate or should be part of <br> 
+   component / container components folder ? We can discuss this <br>
 
-### tests
-    Same can be said for the tests folder as well. We can take it up in the next meeting
+### tests <br>
+    Same can be said for the tests folder as well. We can take it up in the next meeting <br>
 
-### translations 
-    This folder contains all the translations associated with the application.
-    The structure should be as follows
-        locales
-            - en {Language}
-                - translation.json {All Translation [key: value]}
+### translations <br>
+    This folder contains all the translations associated with the application. <br>
+    The structure should be as follows <br>
+        locales <br>
+            - en {Language} <br>
+                - translation.json {All Translation [key: value]} <br>
 
-    Following dependencies are used as part of translation 
-    i18next, i18next-browser-languagedetector, i18next-xhr-backend
-    // Points to be discussed
-    The translation has been defined in the PO files. Some questions regarding this are
-        1) We should completely move out of PO files and create translations from scratch? Cost involved ? Right approach?
-        2) We should stick to the current process of creating a PO file and should have intermediate process to convert them to 
-           translation.json which will be consumed by the i18next ? 
+    Following dependencies are used as part of translation <br>
+    i18next, i18next-browser-languagedetector, i18next-xhr-backend <br>
+    // Points to be discussed <br>
+    The translation has been defined in the PO files. Some questions regarding this are <br>
+        1) We should completely move out of PO files and create translations from scratch? Cost involved ? Right approach? <br>
+        2) We should stick to the current process of creating a PO file and should have intermediate process to convert them to <br>
+           translation.json which will be consumed by the i18next ? <br>
 
-    We will be trimming / removing translation keys which are not be used as part of the final build.
-    i18next-scanner is the npm module which scan source, extract translation keys/values, and merge them into i18n resource files.
-    This will be run a separate script as part of the build. i18next-scanner.config.js is the configuration file
+    We will be trimming / removing translation keys which are not be used as part of the final build. <br>
+    i18next-scanner is the npm module which scan source, extract translation keys/values, and merge them into i18n resource files. <br>
+    This will be run a separate script as part of the build. i18next-scanner.config.js is the configuration file <br>
 
-    Repo link : https://github.com/i18next/i18next-scanner
+    Repo link : https://github.com/i18next/i18next-scanner <br>
 
 
-### App.tsx
-    App Component which be the starting Components for the app
+### App.tsx <br>
+    App Component which be the starting Components for the app <br>
+ 
+### <b>i18n.ts</b> <br>
+    This file contains all the i18n related configuration for translations <br>
 
-### i18n.ts
-    This file contains all the i18n related configuration for translations
-
-### index.ts
-    This is the entry files of the project which will be used in index.html as a starter script
+### index.ts <br>
+    This is the entry files of the project which will be used in index.html as a starter script <br>
 
 
