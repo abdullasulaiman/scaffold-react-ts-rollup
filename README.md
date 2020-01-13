@@ -4,12 +4,14 @@
 
 This repo is a scaffolding project which comprise of following
 
-    1) React
-    2) Typescript
-    3) React Router 
-    4) Rollup for building
-    5) Jest ( TS Jest )
-    6) StoryBook
+
+- React
+- Typescript
+- React Router
+- Redux & Redux Saga
+- Rollup for building
+- Jest ( TS Jest )
+- StoryBook
 
 ## Usage
 
@@ -31,20 +33,19 @@ $ 'npm storybook'
 
 ```
 **Directory structure as follows** <br>
-    src <br>
-        assets <br>
-        components <br>
-        pages <br>
-        public <br>
-        store <br>
-        styles <br>
-        tests <br>
-        translations <br>
-        utils <br>
-
-    App.tsx <br>
-    i18n.ts <br>
-    index.ts <br>
+- src <br>
+    - assets <br>
+    - components <br>
+    - pages <br>
+    - public <br>
+    - store <br>
+    - styles <br>
+    - tests <br>
+    - translations <br>
+    - utils <br>
+- App.tsx <br>
+- i18n.ts <br>
+- index.ts <br>
 
 src is a root folder where all the source files resides <br>
 
@@ -52,38 +53,37 @@ src is a root folder where all the source files resides <br>
     All the assets files like images can be placed here<br>
 
 ### **components**
-    All the base / dumb components should be residing here. These components will be used across the projects. <br>
-    Components should not contain any store code and application logic. These can be called as ATOMS <br>
+All the base / dumb components should be residing here. These components will be used across the projects. <br>
+Components should not contain any store code and application logic. These can be called as ATOMS <br>
 
 ### **pages**
-    Screen / Layout components will be created in this folder. These can contain pages as a feature or a layout 
-    which contains specific layout associated the screens. These can be also used as a based screen / layout for a feature <br>
-    or for a route. This can be called as ORGANISMS
+Screen / Layout components will be created in this folder. These can contain pages as a feature or a layout 
+which contains specific layout associated the screens. These can be also used as a based screen / layout for a feature
+or for a route. This can be called as ORGANISMS
 
 ### **public** 
-    This folder will hold all the statics files which will be used for running the app.<br>
-    e.g.: environment based template html's e.g. dev.html & prod.html. <br>
+This folder will hold all the statics files which will be used for running the app.<br>
+e.g.: environment based template html's e.g. dev.html & prod.html. <br>
 
 ### **store** {we can suggest a better name for this folder}
-    We have all the feature associated with the application created here. They can have a sub-folder with feature name <br>
-        e.g. : a dummy folder **home** and **ssl** is created which has the following <br>
-    **home** <br>
-            **components** <br>
-                Dumb / Base components for this feature which is specific to the feature should be part of this directory. <br>
-                This can be discussed is this required or not? As we have a components folder as part of the top <br>
-                level directory structure will be used across the applications <br>.
-            **containers** <br>
-                Components which are connected to the store / Smart components which is part of this feature should be part <br>
-                of this directory. This can be called as MOLECULES<br>
-            **actions.ts** <br>
-                All the actions related to this feature will be available here. <br>
-            **reducers** <br>
-                A folder created if there multiple reducers in the future to be broken down. This will hold all the reducers<br>
-                associated with the feature.<br>
-            **types.ts** <br>
-                All the types / constants for the feature will be created on this. <br>
+We have all the feature associated with the application created here. They can have a sub-folder with feature name <br>
+e.g. : a dummy folder **home** and **ssl** is created which has the following <br>
+- **home** <br>
+    - **components** <br>
+        Dumb / Base components for this feature which is specific to the feature should be part of this directory. 
+        This can be discussed is this required or not? As we have a components folder as part of the top 
+        level directory structure will be used across the applications <br>.
+    - **containers** <br>
+        Components which are connected to the store / Smart components which is part of this feature should be part <br>
+        of this directory. This can be called as MOLECULES<br>
+    - **actions.ts** <br>
+        All the actions related to this feature will be available here. <br>
+    - **reducers** <br>
+        A folder created if there multiple reducers in the future to be broken down. This will hold all the reducers associated with the feature.
+    - **types.ts** <br>
+        All the types / constants for the feature will be created on this. <br>
 
-    **common** <br>
+- **common** <br>
         This can hold a common actions / reducers and types which can be used by any feature. The directory structure can <br>
         remain the same. <br>
 
@@ -91,26 +91,26 @@ src is a root folder where all the source files resides <br>
     This is still debatable. Do you still want to have this structure where styles are separate or should be part of component / container components folder ? We can discuss this <br>
 
 ### **tests** <br>
-    Same can be said for the tests folder as well. We can take it up in the next meeting <br>
+    Same can be said for the tests folder as well. We can take it up in the next meeting.
 
 ### **translations** <br>
-    This folder contains all the translations associated with the application. <br>
-    The structure should be as follows <br>
-        locales <br>
-            - en {Language} <br>
-                - translation.json {All Translation [key: value]} <br>
+    This folder contains all the translations associated with the application.The structure should be as follows
+- locales
+    - en {Language}
+        - translation.json {All Translation [key: value]}
 
-    Following dependencies are used as part of translation <br>
-    i18next, i18next-browser-languagedetector, i18next-xhr-backend <br>
-    // Points to be discussed <br>
-    The translation has been defined in the PO files. Some questions regarding this are <br>
-        - We should completely move out of PO files and create translations from scratch? Cost involved ? Right approach? <br>
-        - We should stick to the current process of creating a PO file and should have intermediate process to convert them to <br>
-           translation.json which will be consumed by the i18next ? <br>
+- Following dependencies are used as part of translation <br>
+    - i18next
+    - i18next-browser-languagedetector
+    - i18next-xhr-backend <br>
+- Points to be discussed <br>
+    - The translation has been defined in the PO files. Some questions regarding this are
+        - We should completely move out of PO files and create translations from scratch? Cost involved ? Right approach?
+        - We should stick to the current process of creating a PO file and should have intermediate process to convert them to translation.json which will be consumed by the i18next ?
 
-    We will be trimming / removing translation keys which are not be used as part of the final build. <br>
-    i18next-scanner is the npm module which scan source, extract translation keys/values, and merge them into i18n resource files. <br>
-    This will be run a separate script as part of the build. i18next-scanner.config.js is the configuration file <br>
+- We will be trimming / removing translation keys which are not be used as part of the final build.
+- **i18next-scanner** is the npm module which scan source, extract translation keys/values, and merge them into i18n resource files. 
+This will be run a separate script as part of the build. **i18next-scanner.config.js** is the configuration file
 
     Repo link : https://github.com/i18next/i18next-scanner <br>
 
