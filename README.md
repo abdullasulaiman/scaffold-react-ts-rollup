@@ -72,20 +72,18 @@ e.g. : a dummy folder **home** and **ssl** is created which has the following <b
     - **components** <br>
         Dumb / Base components for this feature which is specific to the feature should be part of this directory. 
         This can be discussed is this required or not? As we have a components folder as part of the top 
-        level directory structure will be used across the applications <br>.
+        level directory structure will be used across the applications.
     - **containers** <br>
-        Components which are connected to the store / Smart components which is part of this feature should be part <br>
-        of this directory. This can be called as MOLECULES<br>
+        Components which are connected to the store / Smart components which is part of this feature should be part of this directory. This can be called as MOLECULES
     - **actions.ts** <br>
-        All the actions related to this feature will be available here. <br>
+        All the actions related to this feature will be available here.
     - **reducers** <br>
         A folder created if there multiple reducers in the future to be broken down. This will hold all the reducers associated with the feature.
     - **types.ts** <br>
         All the types / constants for the feature will be created on this. <br>
 
 - **common** <br>
-        This can hold a common actions / reducers and types which can be used by any feature. The directory structure can <br>
-        remain the same. <br>
+        This can hold a common actions / reducers and types which can be used by any feature. The directory structure can remain the same.
 
 ### **styles** <br>
     This is still debatable. Do you still want to have this structure where styles are separate or should be part of component / container components folder ? We can discuss this <br>
