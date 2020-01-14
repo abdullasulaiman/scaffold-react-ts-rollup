@@ -35,10 +35,11 @@ $ 'npm storybook'
 **Directory structure as follows** <br>
 - src <br>
     - assets <br>
+    - common <br>
     - components <br>
     - pages <br>
     - public <br>
-    - store <br>
+    - modules <br>
     - styles <br>
     - tests <br>
     - translations <br>
@@ -51,6 +52,9 @@ src is a root folder where all the source files resides <br>
 
 ### **assets**
     All the assets files like images can be placed here<br>
+
+### **common**
+common reducers, actions, types and store entry file can be added here. App the API service can be part of this folder. These components will be used across the projects. Components should not contain any store code and application logic. These can be called as ATOMS <br>
 
 ### **components**
 All the base / dumb components should be residing here. These components will be used across the projects. <br>
@@ -65,7 +69,7 @@ or for a route. This can be called as ORGANISMS
 This folder will hold all the statics files which will be used for running the app.<br>
 e.g.: environment based template html's e.g. dev.html & prod.html. <br>
 
-### **store** {we can suggest a better name for this folder}
+### **modules**
 We have all the feature associated with the application created here. They can have a sub-folder with feature name <br>
 e.g. : a dummy folder **home** and **ssl** is created which has the following <br>
 - **home** <br>
