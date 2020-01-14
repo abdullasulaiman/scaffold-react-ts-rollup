@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, Route } from 'react-router-dom';
-import HomeContainer from '../store/home/index';
-import SSLContaienr from '../store/ssl/index';
+import HomeContainer from '../modules/home/index';
+import SSLContaienr from '../modules/ssl/index';
 import './layout.scss';
 
 const changeLanguage = (i18n: any, lng: string) => {

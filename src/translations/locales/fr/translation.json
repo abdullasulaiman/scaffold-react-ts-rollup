@@ -6,6 +6,7 @@
         "SSL": "诶ЯÄ--SSL--ÄЯ诶",
         "AUTH_INTERNAL": "诶ЯÄ--Authentication: Active Directory--ÄЯ诶",
         "AUTH_AD": "诶ЯÄ--Authentication: Internal--ÄЯ诶",
-        "NAS_MOUNT": "诶ЯÄ--NAS Mount--ÄЯ诶"
+        "NAS_MOUNT": "诶ЯÄ--NAS Mount--ÄЯ诶",
+        "NEW_KEY": "诶ЯÄ--NEW KEY--ÄЯ诶"
     }
 }

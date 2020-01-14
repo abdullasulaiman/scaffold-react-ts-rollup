@@ -6,6 +6,7 @@
         "SSL": "SSL",
         "AUTH_INTERNAL": "Authentication: Active Directory",
         "AUTH_AD": "Authentication: Internal",
-        "NAS_MOUNT": "NAS Mount"
+        "NAS_MOUNT": "NAS Mount",
+        "NEW_KEY": "NEW KEY"
     }
 }

@@ -21,6 +21,9 @@ import * as react from 'react';
 import * as reactDom from 'react-dom';
 import * as reactIs from 'react-is';
 import * as propTypes from 'prop-types';
+import * as redux from 'redux';
+import * as reactRedux from 'react-redux';
+
 
 // eslint-disable-next-line no-undef
 const isProd = process.env.NODE_ENV === 'production';
@@ -76,6 +79,7 @@ export default {
             'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : 'development'),
         }),
         resolve({
+            mainFields: ['module', 'jsnext', 'jsnext:main', 'browser', 'main'],
             extensions,
         }),
         /** Configuring postcss in the project
@@ -105,6 +109,9 @@ export default {
                 'react-dom': Object.keys(reactDom),
                 'react-is': Object.keys(reactIs),
                 'prop-types': Object.keys(propTypes),
+                'redux': Object.keys(redux),
+                'react-redux': Object.keys(reactRedux),
+                '../node_modules/react-redux/node_modules/react-is/index.js': Object.keys(reactIs)
             },
         }),
         babel({
