@@ -54,7 +54,7 @@ src is a root folder where all the source files resides <br>
     All the assets files like images can be placed here<br>
 
 ### **common**
-common reducers, actions, types and store entry file can be added here. App the API service can be part of this folder. These components will be used across the projects. Components should not contain any store code and application logic. These can be called as ATOMS <br>
+common reducers, actions, types and store entry file can be added here. App assocated api / services can be part of this folder. These will be used across the projects<br>
 
 ### **components**
 All the base / dumb components should be residing here. These components will be used across the projects. <br>
@@ -87,16 +87,16 @@ e.g. : a dummy folder **home** and **ssl** is created which has the following <b
         All the types / constants for the feature will be created on this. <br>
 
 - **common** <br>
-        This can hold a common actions / reducers and types which can be used by any feature. The directory structure can remain the same.
+This can hold a common actions / reducers and types which can be used by any feature. The directory structure can remain the same.
 
 ### **styles** <br>
-    This is still debatable. Do you still want to have this structure where styles are separate or should be part of component / container components folder ? We can discuss this <br>
+This is still debatable. Do you still want to have this structure where styles are separate or should be part of component / container components folder ? We can discuss this <br>
 
 ### **tests** <br>
-    Same can be said for the tests folder as well. We can take it up in the next meeting.
+Same can be said for the tests folder as well. We can take it up in the next meeting.
 
 ### **translations** <br>
-    This folder contains all the translations associated with the application.The structure should be as follows
+This folder contains all the translations associated with the application.The structure should be as follows
 - locales
     - en {Language}
         - translation.json {All Translation [key: value]}
